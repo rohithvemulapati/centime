@@ -1,0 +1,4 @@
+2025-08-30 16:08:53 INFO  [traceId=, spanId=] c.c.service3.Service3Application - Starting Service3Application using Java 21.0.3 with PID 35380 (D:\centime\service3\target\classes started by vemul in D:\centime\service3)
+2025-08-30 16:08:53 INFO  [traceId=, spanId=] c.c.service3.Service3Application - No active profile set, falling back to 1 default profile: "default"
+2025-08-30 16:08:56 INFO  [traceId=, spanId=] c.c.service3.Service3Application - Started Service3Application in 3.62 seconds (process running for 4.716)
+2025-08-30 16:09:06 INFO  [traceId=68b2d4c813b8d2dd085ce5d0bbf2c6b0, spanId=45abe4ea352d97e9] c.c.s.c.ServiceThreeController - Concatenated names: John Doe

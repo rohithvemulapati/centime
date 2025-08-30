@@ -1,0 +1,36 @@
+<configuration>
+    <property name="LOG_PATH" value="D:\centime\logs\service3"/>
+    <property name="APP_NAME" value="service3"/>
+
+    <!-- Console Appender (Everything) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [traceId=%X{traceId}] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File Appender (Only custom logs, no append on restart) -->
+    <appender name="APP_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/${APP_NAME}.log</file>
+        <append>false</append> <!-- ✅ Clears file on restart -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${APP_NAME}-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <!--<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [traceId=%X{traceId}] %logger{36} - %msg%n</pattern>-->
+        	<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [traceId=%X{traceId}, spanId=%X{spanId}] %logger{36} - %msg%n</pattern>
+
+        </encoder>
+    </appender>
+
+    <!-- Only your package logs go to file -->
+    <logger name="com.centime.service3" level="INFO" additivity="false">
+        <appender-ref ref="APP_LOG"/>
+    </logger>
+
+    <!-- Root logs go only to console -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

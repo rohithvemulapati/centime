@@ -1,0 +1,9 @@
+2025-08-30 16:08:51 INFO  [traceId=, spanId=] c.c.service1.Service1Application - Starting Service1Application using Java 21.0.3 with PID 24348 (D:\centime\service1\target\classes started by vemul in D:\centime\service1)
+2025-08-30 16:08:51 INFO  [traceId=, spanId=] c.c.service1.Service1Application - No active profile set, falling back to 1 default profile: "default"
+2025-08-30 16:08:55 INFO  [traceId=, spanId=] c.c.service1.Service1Application - Started Service1Application in 4.835 seconds (process running for 5.825)
+2025-08-30 16:09:04 INFO  [traceId=68b2d4c813b8d2dd085ce5d0bbf2c6b0, spanId=085ce5d0bbf2c6b0] c.c.s.c.ServiceOneController - Received request to greet user: John Doe
+2025-08-30 16:09:04 INFO  [traceId=68b2d4c813b8d2dd085ce5d0bbf2c6b0, spanId=085ce5d0bbf2c6b0] c.c.s.c.ServiceOneController - Received request to greet user: John Doe
+2025-08-30 16:09:04 INFO  [traceId=68b2d4c813b8d2dd085ce5d0bbf2c6b0, spanId=085ce5d0bbf2c6b0] c.c.s.c.ServiceOneController - Calling service 2!!!
+2025-08-30 16:09:05 INFO  [traceId=68b2d4c813b8d2dd085ce5d0bbf2c6b0, spanId=085ce5d0bbf2c6b0] c.c.s.c.ServiceOneController - Received greeting from Service 2: Hello
+2025-08-30 16:09:05 INFO  [traceId=68b2d4c813b8d2dd085ce5d0bbf2c6b0, spanId=085ce5d0bbf2c6b0] c.c.s.c.ServiceOneController - Caling service 3!!!
+2025-08-30 16:09:06 INFO  [traceId=68b2d4c813b8d2dd085ce5d0bbf2c6b0, spanId=085ce5d0bbf2c6b0] c.c.s.c.ServiceOneController - Received full name from Service 3: John Doe

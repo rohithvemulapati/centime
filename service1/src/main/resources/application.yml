@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /service1
+spring:
+  application:
+    name: service1
+
+logging:
+  config: classpath:customLog.xml
+##  level:
+##    com.centime.service1: INFO
+##  file:
+##    name: D:\centime\application.log
+##    path: D:\centime
+##    clean-history-on-start: true 
+#
+#  pattern:
+#    level: '%5p [traceId=%X{traceId}]'
+  
