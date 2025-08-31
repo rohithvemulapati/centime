@@ -22,12 +22,12 @@ import lombok.extern.slf4j.Slf4j;
 public class ServiceOneController {
 
 	@Autowired
-	private WebClient webClient;
+	public WebClient webClient;
 	
 	@Value("${service2.url}")
-	private String service2Url;
+	public String service2Url;
 	@Value("${service3.url}")
-	private String service3Url;
+	public String service3Url;
 	
     @Operation(summary = "Check if Service 1 is up", description = "Returns 'Up' if the service is running")
 	@GetMapping(value = "/running-status", produces = "application/json")
