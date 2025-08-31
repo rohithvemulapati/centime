@@ -1,4 +1,0 @@
-2025-08-30 16:08:57 INFO  [traceId=, spanId=] c.c.service2.Service2Application - Starting Service2Application using Java 21.0.3 with PID 39740 (D:\centime\service2\target\classes started by vemul in D:\centime\service2)
-2025-08-30 16:08:57 INFO  [traceId=, spanId=] c.c.service2.Service2Application - No active profile set, falling back to 1 default profile: "default"
-2025-08-30 16:08:59 INFO  [traceId=, spanId=] c.c.service2.Service2Application - Started Service2Application in 3.439 seconds (process running for 4.424)
-2025-08-30 16:09:05 INFO  [traceId=68b2d4c813b8d2dd085ce5d0bbf2c6b0, spanId=f12289c980501a92] c.c.s.c.ServiceTwoController - Greeting hello API called!!!
