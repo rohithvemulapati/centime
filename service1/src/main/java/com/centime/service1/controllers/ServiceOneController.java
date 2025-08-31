@@ -1,8 +1,5 @@
 package com.centime.service1.controllers;
 
-import java.util.UUID;
-
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +12,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.centime.service1.dto.NameDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 

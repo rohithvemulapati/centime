@@ -1,10 +1,10 @@
-package com.centime.common_service;
+package com.centime.data_access;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CommonServiceApplicationTests {
+class DataAccessApplicationTests {
 
 	@Test
 	void contextLoads() {

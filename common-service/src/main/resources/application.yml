@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: common-service
-#logging:
-#  config: classpath:customLog.xml
