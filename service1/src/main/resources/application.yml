@@ -8,13 +8,9 @@ spring:
 
 logging:
   config: classpath:customLog.xml
-##  level:
-##    com.centime.service1: INFO
-##  file:
-##    name: D:\centime\application.log
-##    path: D:\centime
-##    clean-history-on-start: true 
-#
-#  pattern:
-#    level: '%5p [traceId=%X{traceId}]'
+
+service2:
+  url: http://localhost:8081/service2/api/v1
+service3:
+  url: http://localhost:8082/service3/api/v1
   

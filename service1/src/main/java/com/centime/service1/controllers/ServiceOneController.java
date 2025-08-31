@@ -1,6 +1,7 @@
 package com.centime.service1.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,8 +24,10 @@ public class ServiceOneController {
 	@Autowired
 	private WebClient webClient;
 	
-	private String service2Url = "http://localhost:8081/service2/api/v1/hello";
-	private String service3Url = "http://localhost:8082/service3/api/v1/concat-names";
+	@Value("${service2.url}")
+	private String service2Url;
+	@Value("${service3.url}")
+	private String service3Url;
 	
     @Operation(summary = "Check if Service 1 is up", description = "Returns 'Up' if the service is running")
 	@GetMapping(value = "/running-status", produces = "application/json")
@@ -33,6 +36,7 @@ public class ServiceOneController {
 		return ResponseEntity.ok("Up");
 	}
 	
+    @Operation(summary = "Greet user", description = "Greets the user by calling Service 2 and Service 3")
 	@PostMapping(value = "/greet-user", produces = "application/json")
 	public ResponseEntity<String> greetUser(@RequestBody @Valid NameDTO nameDto) {
         log.info("Received request to greet user: {} {}", nameDto.getName(), nameDto.getSurName());
@@ -53,13 +57,13 @@ public class ServiceOneController {
 	}
 
 	public String callService2() {
-		log.info("Calling service 2!!!");
-		return webClient.get().uri(service2Url).retrieve().bodyToMono(String.class).block(); // blocking
+		log.info("Calling service 2!!!, url : {}", service2Url + "/hello");
+		return webClient.get().uri(service2Url + "/hello").retrieve().bodyToMono(String.class).block(); // blocking
 	}
 
 	public String callService3(NameDTO request) {
-		log.info("Caling service 3!!!");
-		return webClient.post().uri(service3Url).bodyValue(request).retrieve()
+		log.info("Caling service 3!!!, url : {}", service3Url + "/concat-names");
+		return webClient.post().uri(service3Url + "/concat-names").bodyValue(request).retrieve()
 				.bodyToMono(String.class).block();
 	}
 
