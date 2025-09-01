@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -30,8 +29,8 @@ class DataAccessServiceImplTest {
     @Test
 	void testGetAllHierarchy_success() {
 
-    	HierarchyNode root = new HierarchyNode(1, 0, "Root", "green", new ArrayList<>());
-		HierarchyNode child = new HierarchyNode(2, 1, "Child", "blue", new ArrayList<>());
+    	HierarchyNode root = new HierarchyNode(1, 0, "Root", "green");
+		HierarchyNode child = new HierarchyNode(2, 1, "Child", "blue");
 		List<HierarchyNode> nodes = List.of(root, child);
 
 		when(dataAccessRepo.findAll()).thenReturn(nodes);
@@ -48,8 +47,8 @@ class DataAccessServiceImplTest {
     @Test
     void testGetHierarchyById_success() {
 
-    	HierarchyNode root = new HierarchyNode(1, 0, "Root", "green", new ArrayList<>());
-        HierarchyNode child = new HierarchyNode(2, 1, "Child", "blue", new ArrayList<>());
+    	HierarchyNode root = new HierarchyNode(1, 0, "Root", "green");
+        HierarchyNode child = new HierarchyNode(2, 1, "Child", "blue");
         List<HierarchyNode> nodes = List.of(root, child);
 
         when(dataAccessRepo.findAll()).thenReturn(nodes);

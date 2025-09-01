@@ -1,0 +1,7 @@
+2025-08-31 14:11:17 INFO  [traceId=, spanId=] c.c.s.c.ServiceThreeControllerTest - Starting ServiceThreeControllerTest using Java 21.0.3 with PID 27128 (started by vemul in D:\centime\service3)
+2025-08-31 14:11:17 INFO  [traceId=, spanId=] c.c.s.c.ServiceThreeControllerTest - No active profile set, falling back to 1 default profile: "default"
+2025-08-31 14:11:19 INFO  [traceId=, spanId=] c.c.s.c.ServiceThreeControllerTest - Started ServiceThreeControllerTest in 2.293 seconds (process running for 3.828)
+2025-08-31 14:11:20 INFO  [traceId=, spanId=] c.c.s.c.ServiceThreeController - Concatenated names: John Doe
+2025-08-31 14:11:20 INFO  [traceId=, spanId=] c.c.s.Service3ApplicationTests - Starting Service3ApplicationTests using Java 21.0.3 with PID 27128 (started by vemul in D:\centime\service3)
+2025-08-31 14:11:20 INFO  [traceId=, spanId=] c.c.s.Service3ApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-08-31 14:11:21 INFO  [traceId=, spanId=] c.c.s.Service3ApplicationTests - Started Service3ApplicationTests in 1.459 seconds (process running for 6.575)

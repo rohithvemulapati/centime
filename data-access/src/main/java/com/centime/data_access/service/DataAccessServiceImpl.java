@@ -27,22 +27,23 @@ public class DataAccessServiceImpl implements DataAccessService {
 	@LogMethodParam
 	public List<HierarchyResponse> getAllHierarchy() {
 		List<HierarchyNode> allNodes = dataAccessRepo.findAll();
+		List<HierarchyResponse> response = allNodes.stream().map(this::convertToResponse).collect(Collectors.toList());
 
-		List<HierarchyNode> roots;
+		List<HierarchyResponse> roots;
 		try {
-			log.info("Fetched {} nodes from the database", allNodes.size());
-			Map<Integer, HierarchyNode> map = new HashMap<>();
-			for (HierarchyNode node : allNodes) {
+			log.info("Fetched {} nodes from the database", response.size());
+			Map<Integer, HierarchyResponse> map = new HashMap<>();
+			for (HierarchyResponse node : response) {
 				map.put(node.getId(), node);
 			}
 
 			roots = new ArrayList<>();
 
-			for (HierarchyNode node : allNodes) {
+			for (HierarchyResponse node : response) {
 				if (node.getParentId() == 0) {
 					roots.add(node);
 				} else {
-					HierarchyNode parent = map.get(node.getParentId());
+					HierarchyResponse parent = map.get(node.getParentId());
 					if (parent != null) {
 						if (parent.getSubClasses() == null) {
 							parent.setSubClasses(new ArrayList<>());
@@ -57,23 +58,25 @@ public class DataAccessServiceImpl implements DataAccessService {
 			throw e;
 		}
 
-		List<HierarchyResponse> response = roots.stream().map(this::convertToResponse).collect(Collectors.toList());
-		return response;
+//		List<HierarchyResponse> response = roots.stream().map(this::convertToResponse).collect(Collectors.toList());
+		return roots;
 	}
 
 	@Override
 	@LogMethodParam
 	public HierarchyResponse getHierarchyById(int id) {
-		Map<Integer, HierarchyNode> map;
+		Map<Integer, HierarchyResponse> map;
 		try {
 			List<HierarchyNode> allNodes = dataAccessRepo.findAll();
+			List<HierarchyResponse> response = allNodes.stream().map(this::convertToResponse).collect(Collectors.toList());
+
 			map = new HashMap<>();
-			for (HierarchyNode node : allNodes) {
+			for (HierarchyResponse node : response) {
 				map.put(node.getId(), node);
 			}
-			for (HierarchyNode node : allNodes) {
+			for (HierarchyResponse node : response) {
 				if (node.getParentId() != 0) {
-					HierarchyNode parent = map.get(node.getParentId());
+					HierarchyResponse parent = map.get(node.getParentId());
 					if (parent != null) {
 						if (parent.getSubClasses() == null) {
 							parent.setSubClasses(new ArrayList<>());
@@ -86,15 +89,13 @@ public class DataAccessServiceImpl implements DataAccessService {
 			log.error("Error constructing hierarchy by Id: {}", e.getMessage());
 			throw e;
 		}
-		return convertToResponse(map.get(id));
+		return map.get(id);
 	}
 
 	@LogMethodParam
 	public HierarchyResponse convertToResponse(HierarchyNode node) {
-		HierarchyResponse response = new HierarchyResponse(node.getName());
-		for (HierarchyNode child : node.getSubClasses()) {
-			response.getSubClasses().add(convertToResponse(child));
-		}
+		HierarchyResponse response = new HierarchyResponse(node.getId(), node.getName(), node.getParentId(),
+				new ArrayList<>());
 		return response;
 	}
 }

@@ -1,0 +1,15 @@
+2025-09-01 10:23:35 INFO  [traceId=, spanId=] c.c.d.c.DataAccessControllerTest - Starting DataAccessControllerTest using Java 21.0.3 with PID 32776 (started by vemul in D:\centime\data-access)
+2025-09-01 10:23:35 INFO  [traceId=, spanId=] c.c.d.c.DataAccessControllerTest - No active profile set, falling back to 1 default profile: "default"
+2025-09-01 10:23:37 INFO  [traceId=, spanId=] c.c.d.c.DataAccessControllerTest - Started DataAccessControllerTest in 3.411 seconds (process running for 4.985)
+2025-09-01 10:23:37 INFO  [traceId=, spanId=] c.c.d.c.DataAccessController - Fetching hierarchy for ID: 1
+2025-09-01 10:23:38 INFO  [traceId=, spanId=] c.c.d.c.DataAccessController - Fetching full hierarchy...
+2025-09-01 10:23:38 INFO  [traceId=, spanId=] c.c.d.c.DataAccessController - Fetching hierarchy for ID: 99
+2025-09-01 10:23:38 ERROR [traceId=, spanId=] c.c.d.c.DataAccessController - Error fetching hierarchy for ID 99: Not Found
+2025-09-01 10:23:38 INFO  [traceId=, spanId=] c.c.d.c.DataAccessController - Fetching full hierarchy...
+2025-09-01 10:23:38 ERROR [traceId=, spanId=] c.c.d.c.DataAccessController - Error fetching full hierarchy: Database error
+2025-09-01 10:23:38 INFO  [traceId=, spanId=] c.c.d.DataAccessApplicationTests - Starting DataAccessApplicationTests using Java 21.0.3 with PID 32776 (started by vemul in D:\centime\data-access)
+2025-09-01 10:23:38 INFO  [traceId=, spanId=] c.c.d.DataAccessApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-09-01 10:23:42 INFO  [traceId=, spanId=] c.c.d.DataAccessApplicationTests - Started DataAccessApplicationTests in 4.324 seconds (process running for 9.816)
+2025-09-01 10:23:42 ERROR [traceId=, spanId=] c.c.d.service.DataAccessServiceImpl - Error constructing hierarchy by Id: DB Error
+2025-09-01 10:23:42 INFO  [traceId=, spanId=] c.c.d.service.DataAccessServiceImpl - Fetched 2 nodes from the database
+2025-09-01 10:23:42 INFO  [traceId=, spanId=] c.c.d.service.DataAccessServiceImpl - Constructed hierarchy with 1 root nodes

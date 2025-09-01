@@ -1,0 +1,7 @@
+2025-08-31 14:07:05 INFO  [traceId=, spanId=] c.c.s.c.ServiceTwoControllerTest - Starting ServiceTwoControllerTest using Java 21.0.3 with PID 41892 (started by vemul in D:\centime\service2)
+2025-08-31 14:07:05 INFO  [traceId=, spanId=] c.c.s.c.ServiceTwoControllerTest - No active profile set, falling back to 1 default profile: "default"
+2025-08-31 14:07:07 INFO  [traceId=, spanId=] c.c.s.c.ServiceTwoControllerTest - Started ServiceTwoControllerTest in 2.403 seconds (process running for 3.893)
+2025-08-31 14:07:08 INFO  [traceId=, spanId=] c.c.s.c.ServiceTwoController - Greeting hello API called!!!
+2025-08-31 14:07:08 INFO  [traceId=, spanId=] c.c.s.Service2ApplicationTests - Starting Service2ApplicationTests using Java 21.0.3 with PID 41892 (started by vemul in D:\centime\service2)
+2025-08-31 14:07:08 INFO  [traceId=, spanId=] c.c.s.Service2ApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-08-31 14:07:10 INFO  [traceId=, spanId=] c.c.s.Service2ApplicationTests - Started Service2ApplicationTests in 1.307 seconds (process running for 6.496)
