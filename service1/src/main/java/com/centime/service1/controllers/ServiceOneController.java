@@ -3,7 +3,6 @@ package com.centime.service1.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,13 +27,6 @@ public class ServiceOneController {
 	public String service2Url;
 	@Value("${service3.url}")
 	public String service3Url;
-	
-    @Operation(summary = "Check if Service 1 is up", description = "Returns 'Up' if the service is running")
-	@GetMapping(value = "/running-status", produces = "application/json")
-	public ResponseEntity<String> serviceOne() {
-		log.info("Service 1 is running...");
-		return ResponseEntity.ok("Up");
-	}
 	
     @Operation(summary = "Greet user", description = "Greets the user by calling Service 2 and Service 3")
 	@PostMapping(value = "/greet-user", produces = "application/json")

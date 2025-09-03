@@ -74,12 +74,6 @@ class ServiceOneControllerTest {
 //    }
 
     @Test
-    void testServiceOneStatus() {
-        ResponseEntity<String> response = serviceOneController.serviceOne();
-        assertEquals("Up", response.getBody());
-    }
-    
-    @Test
     void testGreetUser_Service2Fails() {
         // Service 2 returns 500
         mockWebServer.enqueue(new MockResponse()
